@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Web Design Mastery | Photography</title>
+  </head>
+  <style>
+      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --text-dark: #000000;
+  --text-light: #767268;
+  --extra-light: #eef9f8;
+  --white: #ffffff;
+  --max-width: 1200px;
+  --header-font: "Playfair Display", serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.section__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+.section__header {
+  position: relative;
+  isolation: isolate;
+  width: fit-content;
+  margin-inline: auto;
+  padding-bottom: 0.5rem;
+  font-size: 2.5rem;
+  font-weight: 800;
+  font-family: var(--header-font);
+  color: var(--text-dark);
+  text-align: center;
+}
+
+.section__header::before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 3rem;
+  background-color: var(--text-dark);
+}
+
+.btn {
+  padding: 1rem 2rem;
+  outline: none;
+  border: none;
+  color: var(--white);
+  background-color: var(--text-dark);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--text-light);
+}
+
+img {
+  display: flex;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+ul {
+  list-style: none;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  
+}
+
+nav {
+  position: fixed;
+  isolation: isolate;
+  width: 100%;
+  z-index: 9;
+}
+
+.nav__header {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: var(--extra-light); */
+}
+
+.nav__logo img {
+  max-width: 125px;
+}
+
+.nav__menu__btn {
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  cursor: pointer;
+}
+
+.nav__links {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 2rem;
+  background-color: var(--extra-light);
+  transition: transform 0.5s;
+  z-index: -1;
+}
+
+.nav__links.open {
+  transform: translateY(100%);
+}
+
+.nav__links a {
+  font-weight: 500;
+  padding-right: 20px;
+  /* color: var(--text-light); */
+  color: black;
+  font-weight: 400;
+}
+
+/* :hover */
+
+
+.header__container {
+  display: grid;
+  padding-block: 0;
+  overflow: hidden;
+}
+
+.header__content {
+  padding-block: 0 5rem;
+}
+
+.header__content h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  font-family: var(--header-font);
+  color: var(--text-dark);
+  text-align: center;
+}
+
+.header__content h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: var(--header-font);
+  color: var(--text-dark);
+  text-align: center;
+}
+
+.header__btn {
+  text-align: center;
+}
+
+.about__container {
+  display: grid;
+  gap: 2rem;
+  overflow: hidden;
+}
+
+.about__image img {
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+.about__content .section__header {
+  margin-bottom: 4rem;
+}
+
+.about__content p {
+  margin-bottom: 2rem;
+  color: var(--text-light);
+  line-height: 1.75rem;
+  text-align: center;
+}
+
+.about__btn {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.portfolio__grid {
+  margin-top: 4rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.portfolio__grid > div {
+  display: grid;
+  gap: 1rem;
+}
+
+.blog__container .section__header {
+  margin-bottom: 4rem;
+}
+
+.blog__grid {
+  margin-bottom: 4rem;
+  display: grid;
+  gap: 3rem 2rem;
+}
+
+.blog__card h5 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+.blog__card h4 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: var(--text-dark);
+  font-family: var(--header-font);
+}
+
+.blog__card p {
+  line-height: 1.75rem;
+  color: var(--text-light);
+}
+
+.blog__btn {
+  text-align: center;
+  
+}
+
+.contact {
+  background-color: var(--extra-light);
+}
+
+.contact__container {
+  padding-block: 0;
+  display: grid;
+  gap: 2rem;
+}
+
+.contact__content {
+  padding-block: 5rem;
+}
+
+.contact__content .section__header {
+  margin-bottom: 2rem;
+}
+
+.contact__content p {
+  margin-bottom: 2rem;
+  line-height: 1.75rem;
+  color: var(--text-light);
+  text-align: center;
+}
+
+.contact__content input {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--text-light);
+  font-size: 1rem;
+  color: var(--text-light);
+  background-color: transparent;
+}
+
+.contact__content .btn {
+  margin-top: 2rem;
+}
+
+.contact__image {
+  display: none;
+}
+
+.footer__container {
+  display: grid;
+  gap: 4rem;
+}
+
+.footer__col .section__header {
+  margin-inline-start: unset;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.footer__col p {
+  line-height: 1.75rem;
+  color: var(--text-light);
+}
+
+.footer__socials {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer__socials a {
+  padding: 5px 9px;
+  font-size: 1.25rem;
+  color: var(--text-light);
+  border-radius: 100%;
+}
+
+.footer__socials a:hover {
+  background-color: var(--extra-light);
+}
+
+.footer__bar {
+  padding: 1rem;
+  color: var(--text-light);
+  text-align: center;
+}
+
+@media (width > 540px) {
+  .header__content h1 {
+    font-size: 4.75rem;
+  }
+
+  .portfolio__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .portfolio__grid > div:nth-child(3) {
+    grid-column: 1/3;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .input__row {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width > 768px) {
+  nav {
+    position: absolute;
+    padding: 2rem 1rem;
+    max-width: var(--max-width);
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .nav__header {
+    flex: 1;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  /* .nav__menu__btn {
+    display: none;
+  } */
+
+
+  .nav__links a:hover {
+    color: var(--text-dark);
+  }
+
+  .header__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    isolation: isolate;
+  }
+
+  .header__image {
+    grid-area: 1/2/2/3;
+    position: relative;
+    height: 100%;
+  }
+
+  .header__image img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: unset;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .header__content {
+    padding-block: 10rem;
+  }
+
+  .header__content :is(h1, h2, .header__btn) {
+    text-align: left;
+  }
+
+  .header__content h1 {
+    font-size: 5rem;
+  }
+
+  .about__container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+
+  .about__content {
+    max-width: 450px;
+    margin-inline: auto;
+  }
+
+  .about__content .section__header {
+    margin-inline-start: unset;
+  }
+
+  .about__content :is(p, .about__btn) {
+    text-align: left;
+  }
+
+  .portfolio__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .portfolio__grid > div:nth-child(3) {
+    grid-column: unset;
+    grid-template-columns: 1fr;
+  }
+
+  .blog__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .blog__btn {
+    text-align: left;
+  }
+
+  .contact__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact__content .section__header {
+    margin-inline-start: unset;
+  }
+
+  .contact__content p {
+    text-align: left;
+  }
+
+  .contact__image {
+    display: flex;
+    position: relative;
+    isolation: isolate;
+  }
+
+  .contact__image img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 450px;
+  }
+  .footer__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (width > 1024px) {
+  .header__content {
+    padding-block: 15rem 12rem;
+  }
+
+  .portfolio__grid,
+  .portfolio__grid > div {
+    gap: 1.5rem;
+  }
+}
+@media (width > 380px) {
+    .nav__header{
+        background-color: none;
+    }
+}
+
+
+      /* Navigation Bar */
+      nav {
+        /* background-color: #333; */
+        padding: 1rem;
+      }
+
+      .nav__links {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+      }
+
+      .nav__links li {
+        position: relative;
+      }
+
+      .nav__links li a {
+        text-decoration: none;
+        color: black;        
+        font-size: 1.2rem;
+        font-weight: 400;
+        padding-bottom: 5px;
+        display: inline-block;
+        position: relative;
+        transition: color 0.3s ease;
+      }
+
+      /* Hover effect: line under the text */
+      .nav__links li a::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: white; /* Change to your preferred line color */
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      /* On hover: line animation from left to right */
+      .nav__links li a:hover::before {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+
+      .nav__links li a:hover {
+        color: white; /* Change to the text color you want on hover */
+      }
+      /* auto tyoing  */
+      #typed-text1, #typed-text2 {
+  font-family: "Playfair Display", serif;
+  color: #000; /* or your preferred color */
+  border-right: 2px solid #000; /* cursor-like effect */
+  padding-right: 0.1rem; /* Adjust cursor spacing */
+  white-space: nowrap; /* Ensures text stays in a single line */
+  overflow: hidden; /* Hide the extra text that hasn't been typed yet */
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+#typed-text1, #typed-text2 {
+  animation: blink 0.7s infinite;
+}
+/* # */
+  /* Responsive media queries */
+  @media screen and (max-width: 992px) {
+    .header__content h1 {
+      font-size: 2.5rem;
+      margin-top: 5px;
+    }
+    .header__content h2 {
+        font-size: 1.3rem;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .header__content h1 {
+      font-size: 2rem;
+    }
+
+    .header__content h2 {
+      font-size: 1.2rem;
+    }
+
+    .header__btn .btn {
+      font-size: 0.95rem;
+      padding: 0.7rem 1.5rem;
+    }
+  }
+
+  @media screen and (max-width: 380px) {
+    .header__content h1 {
+      font-size: 1.5rem;
+    }
+
+    .header__content h2 {
+      font-size: 1rem;
+    }
+
+    #typed-text1, #typed-text2 {
+      /* display: block; */
+      font-size: 1.4rem;
+    }
+
+    .header__btn .btn {
+      font-size: 0.9rem;
+      padding: 0.6rem 1.2rem;
+    }
+  }
+  /* back button */
+  .back-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .back-btn:hover {
+    background-color: #333;
+    transform: scale(1.05);
+  }
+
+  .back-btn .icon {
+    font-size: 1.2rem;
+  }
+
+  /* Media query for medium to large screens */
+  @media screen and (min-width: 768px) {
+    .back-btn {
+      top: 25px;
+      right: 25px;
+      font-size: 1rem;
+      padding: 0.7rem 1.3rem;
+    }
+  }
+
+  /* Media query for smaller screens (phones) */
+  @media screen and (max-width: 767px) {
+    .back-btn {
+      top: 15px;
+      right: 15px;
+      font-size: 0.9rem;
+      padding: 0.6rem 1rem;
+    }
+
+    .back-btn .icon {
+      font-size: 1rem;
+    }
+  }
+
+  /* Media query for extra small screens (like old phones) */
+  @media screen and (max-width: 420px) {
+    .back-btn {
+      font-size: 0.8rem;
+      padding: 0.5rem 0.8rem;
+      top: 10px;
+      right: 10px;
+    }
+  }
+
+
+  </style>
+  <body>
+    <nav>
+      <div class="nav__header">
+        <div class="nav__logo">
+          <a href="#">
+            <img src="assets/logo1.png" alt="logo" />
+          </a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <!-- <i class="ri-menu-3-line"></i> -->
+        </div>
+      </div>
+      <button class="back-btn" onclick="window.location.href='index.html'">
+        ⬅ Back
+      </button>
+      
+      
+    </nav>
+    
+
+
+    <header id="home">
+      <div class="section__container header__container">
+        <div class="header__image">
+          <img src="assets/pho27.jpeg" alt="header" />
+        </div>
+        <div class="header__content">
+          <h1>
+            <span id="typed-text1"></span> <!-- First part of the text -->
+            <br /> <!-- Line break to move to the next line -->
+            <span id="typed-text2"></span> <!-- Second part of the text (on new line) -->
+          </h1>
+          <h2>Bangalore, INDIA</h2>
+          <div class="header__btn">
+            <button class="btn">HIRE ME</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+
+    <section class="section__container about__container" id="about">
+      <div class="about__image">
+        <img src="assets/pho5.jpeg" alt="about" />
+      </div>
+      <div class="about__content">
+        <h2 class="section__header">About Me</h2>
+        <p>
+          Hi, I'm Alina Lee, a passionate Photographer and Filmmaker dedicated
+          to capturing moments that tell stories. I specialize in creating
+          stunning visuals that resonate emotionally and creatively.
+        </p>
+        <p>
+          Whether it's through the lens of a camera or the framing of a
+          cinematic shot, I strive to bring authenticity and artistry to every
+          project.
+        </p>
+        <div class="about__btn">
+          <button class="btn">VIEW MY WORKS</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container portfolio__container" id="portfolio">
+      <h2 class="section__header">Portfolio</h2>
+      <div class="portfolio__grid">
+        <div>
+          <img src="assets/pho11.jpeg" alt="portfolio" />
+          <img src="assets/pho1.jfif" alt="portfolio" />
+          <img src="assets/pho4.jpeg" alt="portfolio" />
+        </div>
+        <div>
+          <img src="assets/pho2.jpeg" alt="portfolio" />
+          <img src="assets/pho32.jpeg" alt="portfolio" />
+        </div>
+        <div>
+          <img src="assets/pho34.jpeg" alt="portfolio" />
+          <img src="assets/pho33.jpeg" alt="portfolio" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container blog__container" id="blog">
+      <h2 class="section__header">Blog</h2>
+      <div class="blog__grid">
+        <div class="blog__card">
+          <h5>3.11.2023</h5>
+          <h4>5 Tips for Capturing Stunning Portraits</h4>
+          <p>
+            Discover simple yet powerful techniques to enhance your portrait
+            photography, from mastering lighting to connecting with your subject
+            for authentic shots.
+          </p>
+        </div>
+        <div class="blog__card">
+          <h5>10.01.2024</h5>
+          <h4>The Art of Visual Storytelling in Filmmaking</h4>
+          <p>
+            Explore how to craft compelling narratives through cinematography,
+            sound design, and editing that leave a lasting impact on your
+            audience.
+          </p>
+        </div>
+        <div class="blog__card">
+          <h5>15.04.2024</h5>
+          <h4>Essential Gear Every Photographer Needs</h4>
+          <p>
+            A comprehensive guide to must-have equipment, from cameras to lenses
+            and accessories, for both beginners and seasoned photographers.
+          </p>
+        </div>
+        <div class="blog__card">
+          <h5>25.06.2024</h5>
+          <h4>Create Cinematic Videos with Minimal Gear</h4>
+          <p>
+            Practical advice for achieving the professional-quality videos
+            without breaking your bank, perfect for new and aspiring filmmakers
+            on a budget.
+          </p>
+        </div>
+      </div>
+      <div class="blog__btn">
+        <button class="btn">VIEW ALL BLOGS</button>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="section__container contact__container">
+        <div class="contact__content">
+          <h2 class="section__header">Contact Me</h2>
+          <p>
+            Have a project in mind or need a photographer or filmmaker to bring
+            your vision to life? I'd love to hear from you!
+          </p>
+          <form action="/">
+            <div class="input__row">
+              <input type="text" placeholder="Your Name" />
+              <input type="text" placeholder="Your Email" />
+            </div>
+            <input type="text" placeholder="Your Message" />
+            <button class="btn" type="submit">SEND IT</button>
+          </form>
+        </div>
+        <div class="contact__image">
+          <img src="assets/pho18.png" alt="contact" />
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <h4 class="section__header">Get In Touch</h4>
+          <p>
+            Reach out for inquiries, collaborations, or just to say hello—I'd
+            love to connect with you.
+          </p>
+        </div>
+        <div class="footer__col">
+          <h4 class="section__header">Where's My Office?</h4>
+          <p>123 Creative Lane, Vision City, Artland 56789, United States.</p>
+        </div>
+        <div class="footer__col">
+          <h4 class="section__header">My Social Links</h4>
+          <ul class="footer__socials">
+            <li>
+              <a href="#"><i class="ri-facebook-fill"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-twitter-fill"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-pinterest-line"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-instagram-line"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-youtube-fill"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bar">
+        Copyright © 2024 Web Design Mastery. All rights reserved.
+      </div>
+    </footer>
+    <script>
+      // Toggle the navigation links when the hamburger menu is clicked
+      const menuBtn = document.getElementById('menu-btn');
+      const navLinks = document.getElementById('nav-links');
+    
+      menuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+      /* auto tyoing  */
+      document.addEventListener("DOMContentLoaded", function () {
+  const text1 = "NATURAL LIGHT"; // First part of the text
+  const text2 = "PHOTOGRAPHY"; // Second part of the text
+  let index1 = 0; // For the first part
+  let index2 = 0; // For the second part
+  const speed = 150; // Speed of typing (ms per character)
+  const typingDelay = 500; // Delay before typing the second part
+
+  const typedText1Element = document.getElementById("typed-text1");
+  const typedText2Element = document.getElementById("typed-text2");
+
+  // Function to clear the text and reset the typing effect
+  function resetTyping() {
+    index1 = 0;
+    index2 = 0;
+    typedText1Element.innerHTML = '';
+    typedText2Element.innerHTML = '';
+    typeFirst(); // Restart the typing effect
+  }
+
+  // Type the first part
+  function typeFirst() {
+    if (index1 < text1.length) {
+      typedText1Element.innerHTML += text1.charAt(index1); // Add one character
+      index1++;
+      setTimeout(typeFirst, speed); // Call the type function after the set speed
+    } else {
+      // Once the first part is finished, start typing the second part
+      setTimeout(typeSecond, typingDelay); // Delay for a bit before starting the second part
+    }
+  }
+
+  // Type the second part
+  function typeSecond() {
+    if (index2 < text2.length) {
+      typedText2Element.innerHTML += text2.charAt(index2); // Add one character
+      index2++;
+      setTimeout(typeSecond, speed); // Call the type function after the set speed
+    } else {
+      // Once the second part is finished, reset and start typing again
+      setTimeout(resetTyping, typingDelay); // Wait a bit, then reset
+    }
+  }
+
+  typeFirst(); // Start the typing effect for the first part
+});
+
+
+    </script>
+    
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
